@@ -35,7 +35,7 @@ body{
     background-color: rgb(27, 39, 63);
 }
 .header {
-    width: 1247px;
+    width: 64vw;
     height: 86px;
     font-family: "Rubik", sans-serif;
     font-size: 32px;
@@ -183,3 +183,8 @@ body{
         margin-top: 75px;
     }
 }   
+@media (max-width: 900px) {   
+    .search{
+        display: none;
+    }
+}

@@ -21,7 +21,7 @@ body {
 }
 
 .header {
-  width: 1247px;
+  width: 64vw;
   height: 86px;
   font-family: "Rubik", sans-serif;
   font-size: 32px;
@@ -205,4 +205,10 @@ body {
 .bigCard .card__name {
   margin-left: 25px;
   margin-top: 75px;
+}
+
+@media (max-width: 900px) {
+  .search {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
