@@ -22,7 +22,7 @@ body{
     margin: 0;
     background: black url(img/bg.png);
     background-repeat: no-repeat;
-    background-size: 100vw;
+    background-size: 100%;
 }
 ::-webkit-scrollbar {
     background: rgb(52, 53, 112) url(img/bg.png);
@@ -94,7 +94,7 @@ body{
 .cards{
     display: flex;
     justify-content: space-between;
-    width: 1034px;
+    width: 64vw;
 }
 .cards_wraper{
     margin-left: auto;
@@ -107,15 +107,16 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 1034px;
+    width: 64vw;
     flex-wrap: wrap;
 }
 .card{
-    
-    width: 469px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25vw;
     height: 618px;
     background-color: rgba(5, 5, 5, 0.3);
-    flex-wrap: wrap;
     h2{
         font-family: "Rubik", sans-serif;
         font-size: 36px;
@@ -127,9 +128,9 @@ body{
     border-radius: 10px;
 }
 .card__image{
-    margin-left: 50.5px;
-    width: 368px;
-    height: 220px;
+    max-width: 368px;
+    height: auto;
+    width: 80%;
 }
 .card__name{
     margin-left: 50.5px;
@@ -149,7 +150,8 @@ body{
 .card__buyButton{
     height: 67px;
     width: 159px;
-    margin-left: 50.5px;
+    align-self: flex-start;
+    margin-left: 15%;
     @include ButtonFont();
     background-color: rgba(0, 0, 0, 0);
     border: 0;  
@@ -158,6 +160,12 @@ body{
 }
 .notAv{
     text-decoration: line-through;
+}
+.notAvImg{
+    max-width: 368px;
+    max-height: 220px;
+    height: auto;
+    width: 80%;
 }
 .card__buyButton:hover{
     border-bottom-width: 1px;

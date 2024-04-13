@@ -25,6 +25,7 @@ function createCard(product){
         cardImg.src = "img/empty_product.png"
         cardImg.alt = "НЕ ДОСТУПНО"
         cardPrice.classList.add("notAv")
+        cardImg.classList.add("notAvImg")
     }
     const cardPriceText = document.createElement("h2");
     cardPriceText.classList.add("card__price-text")
