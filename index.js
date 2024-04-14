@@ -22,7 +22,7 @@ function createCard(product){
         cardImg.alt = product.name
     }
     else{
-        cardImg.src = "img/empty_product.png"
+        cardImg.src = "img/noproduct.png"
         cardImg.alt = "НЕ ДОСТУПНО"
         cardPrice.classList.add("notAv")
         cardImg.classList.add("notAvImg")
@@ -38,13 +38,21 @@ function createCard(product){
     cardButton.textContent = "BUY NOW"; 
 
     if(product.isBig){
+        const descriptionContainer = document.createElement("div")
+        descriptionContainer.classList.add("descriptionContainer")
+        descriptionContainer.appendChild(cardName)
+        descriptionContainer.appendChild(cardPriceText)
+        descriptionContainer.appendChild(cardDesc)
+        descriptionContainer.appendChild(cardButton)
         card.classList.add("bigCard")
         cardPriceText.appendChild(cardPrice)
         card.appendChild(cardImg)
+        card.appendChild(descriptionContainer)
+       /*card.appendChild(cardImg)
         card.appendChild(cardName)
         card.appendChild(cardPriceText)
         card.appendChild(cardDesc)
-        card.appendChild(cardButton)
+        card.appendChild(cardButton)*/
     }
     else{
         cardPriceText.appendChild(cardPrice)
@@ -69,3 +77,8 @@ function renderCards(products) {
 document.addEventListener("DOMContentLoaded", () => {
     renderCards(products);
 });
+
+cart = []
+function addtocart(){
+
+}
