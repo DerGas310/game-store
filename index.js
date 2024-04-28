@@ -36,6 +36,9 @@ function createCard(product){
     const cardButton = document.createElement("button");
     cardButton.classList.add("card__buyButton")
     cardButton.textContent = "BUY NOW"; 
+    cardButton.addEventListener("click",() =>{
+        addtocart(product)
+    })
 
     if(product.isBig){
         const descriptionContainer = document.createElement("div")
@@ -78,7 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCards(products);
 });
 
-cart = []
-function addtocart(){
-
+const cart = []
+function addtocart(obj){
+    cart.push(obj)
+    //console.log(`товар ${obj.name} добавлен в корзину`)
 }
