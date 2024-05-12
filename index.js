@@ -22,9 +22,10 @@ function createCard(product){
         cardImg.alt = product.name
     }
     else{
-        cardImg.src = "img/empty_product.png"
+        cardImg.src = "img/noproduct.png"
         cardImg.alt = "НЕ ДОСТУПНО"
         cardPrice.classList.add("notAv")
+        cardImg.classList.add("notAvImg")
     }
     const cardPriceText = document.createElement("h2");
     cardPriceText.classList.add("card__price-text")
@@ -35,15 +36,26 @@ function createCard(product){
     const cardButton = document.createElement("button");
     cardButton.classList.add("card__buyButton")
     cardButton.textContent = "BUY NOW"; 
+    cardButton.addEventListener("click",() =>{
+        addtocart(product)
+    })
 
     if(product.isBig){
+        const descriptionContainer = document.createElement("div")
+        descriptionContainer.classList.add("descriptionContainer")
+        descriptionContainer.appendChild(cardName)
+        descriptionContainer.appendChild(cardPriceText)
+        descriptionContainer.appendChild(cardDesc)
+        descriptionContainer.appendChild(cardButton)
         card.classList.add("bigCard")
         cardPriceText.appendChild(cardPrice)
         card.appendChild(cardImg)
+        card.appendChild(descriptionContainer)
+       /*card.appendChild(cardImg)
         card.appendChild(cardName)
         card.appendChild(cardPriceText)
         card.appendChild(cardDesc)
-        card.appendChild(cardButton)
+        card.appendChild(cardButton)*/
     }
     else{
         cardPriceText.appendChild(cardPrice)
@@ -68,3 +80,15 @@ function renderCards(products) {
 document.addEventListener("DOMContentLoaded", () => {
     renderCards(products);
 });
+
+const cart = []
+function addtocart(obj){
+    const existingItem = cart.findIndex(item => item.name === obj.name)
+    if(existingItem !== -1){
+        console.log(`игра ${obj.name} уже в корзине`)
+        return 
+    }
+    cart.push(obj)
+    localStorage.setItem("cart", JSON.stringify(cart))
+    console.log(`товар ${obj.name} добавлен в корзину`)
+}
