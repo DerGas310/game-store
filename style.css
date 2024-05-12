@@ -175,6 +175,7 @@ body {
   border: 0;
   box-sizing: content-box;
   border-bottom: 0px azure solid;
+  margin-bottom: 20px;
 }
 
 .notAv {
@@ -239,4 +240,29 @@ body {
 }*/
 .home_icon {
   width: 48px;
+}
+
+.cart_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 52vw;
+  flex-wrap: wrap;
+}
+
+.summ {
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  font-family: "Rubik", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: azure;
+  background-color: rgba(5, 5, 5, 0.3);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  padding: 10px;
+  border-radius: 10px;
+  color: aqua;
+  font-weight: 500;
 }/*# sourceMappingURL=style.css.map */

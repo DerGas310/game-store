@@ -83,6 +83,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const cart = []
 function addtocart(obj){
+    const existingItem = cart.findIndex(item => item.name === obj.name)
+    if(existingItem !== -1){
+        console.log(`игра ${obj.name} уже в корзине`)
+        return 
+    }
     cart.push(obj)
-    //console.log(`товар ${obj.name} добавлен в корзину`)
+    localStorage.setItem("cart", JSON.stringify(cart))
+    console.log(`товар ${obj.name} добавлен в корзину`)
 }
